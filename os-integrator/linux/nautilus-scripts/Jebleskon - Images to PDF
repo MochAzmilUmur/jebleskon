@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Jebleskon: Images to PDF (Nautilus/Nemo script)
+set -euo pipefail
+
+FILES=$(echo "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" | tr '\n' ',' | sed 's/,$//')
+[[ -z "$FILES" ]] && exit 1
+
+jebleskon --action img2pdf --files "$FILES"

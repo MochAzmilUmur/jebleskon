@@ -1,0 +1,53 @@
+Windows Registry Editor Version 5.00
+
+; Jebleskon Explorer context menu (cascading).
+; Install:  right-click this file -> Merge, or run  reg import jebleskon_menu.reg
+; Remove:   change every "Jebleskon*" key's delete flag below, or delete the keys manually.
+;
+; Adjust JEBLESKON_EXE below to your install path before importing.
+;
+; NOTE: every verb here is registered on the single-file "*" key, so only ONE
+; selected file reaches the CLI. Merge of several PDFs is therefore not available
+; from Explorer. The KDE service menu (os-integrator/linux/dolphin.desktop) uses
+; %F and does support multi-select merge.
+
+; --- Root key: the "Jebleskon" cascade on any file --------------------------
+[HKEY_CLASSES_ROOT\*\shell\Jebleskon]
+"MUIVerb"="Jebleskon"
+"SubCommands"=""
+"Icon"="shell32.dll,71"
+
+; --- Compress PDF -----------------------------------------------------------
+[HKEY_CLASSES_ROOT\*\shell\Jebleskon\shell\01compress]
+"MUIVerb"="Compress PDF"
+"Icon"="JEBLESKON_EXE,0"
+[HKEY_CLASSES_ROOT\*\shell\Jebleskon\shell\01compress\command]
+@="\"JEBLESKON_EXE\" --action compress --files \"%1\""
+
+; --- Split PDF into single pages -------------------------------------------
+[HKEY_CLASSES_ROOT\*\shell\Jebleskon\shell\02split]
+"MUIVerb"="Split PDF into pages"
+"Icon"="JEBLESKON_EXE,0"
+[HKEY_CLASSES_ROOT\*\shell\Jebleskon\shell\02split\command]
+@="\"JEBLESKON_EXE\" --action split --files \"%1\""
+
+; --- Convert document <-> PDF ----------------------------------------------
+[HKEY_CLASSES_ROOT\*\shell\Jebleskon\shell\03convert]
+"MUIVerb"="Convert to PDF / DOCX"
+"Icon"="JEBLESKON_EXE,0"
+[HKEY_CLASSES_ROOT\*\shell\Jebleskon\shell\03convert\command]
+@="\"JEBLESKON_EXE\" --action convert-doc --files \"%1\""
+
+; --- PDF-specific submenu (shown on .pdf files) ----------------------------
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.pdf\shell\Jebleskon]
+"MUIVerb"="Jebleskon"
+"SubCommands"=""
+"Icon"="shell32.dll,71"
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.pdf\shell\Jebleskon\shell\01compress]
+"MUIVerb"="Compress PDF"
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.pdf\shell\Jebleskon\shell\01compress\command]
+@="\"JEBLESKON_EXE\" --action compress --files \"%1\""
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.pdf\shell\Jebleskon\shell\02split]
+"MUIVerb"="Split PDF into pages"
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.pdf\shell\Jebleskon\shell\02split\command]
+@="\"JEBLESKON_EXE\" --action split --files \"%1\""

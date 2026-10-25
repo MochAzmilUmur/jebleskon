@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Jebleskon: Compress PDF (Nautilus/Nemo script)
+set -euo pipefail
+
+FILE=$(echo "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" | head -n1 | tr -d '\n')
+[[ -z "$FILE" ]] && exit 1
+
+jebleskon --action compress --files "$FILE"

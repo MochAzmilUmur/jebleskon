@@ -1,0 +1,50 @@
+  <action>
+    <icon>application-pdf</icon>
+    <name>Jebleskon - Compress PDF</name>
+    <unique-id>jebleskon-compress</unique-id>
+    <command>jebleskon --action compress --files %f</command>
+    <description>Compress PDF with Ghostscript</description>
+    <range>*</range>
+    <patterns>*.pdf</patterns>
+    <directories/>
+  </action>
+  <action>
+    <icon>application-pdf</icon>
+    <name>Jebleskon - Split PDF into pages</name>
+    <unique-id>jebleskon-split</unique-id>
+    <command>jebleskon --action split --files %f</command>
+    <description>Split PDF into one file per page</description>
+    <range>*</range>
+    <patterns>*.pdf</patterns>
+    <directories/>
+  </action>
+  <action>
+    <icon>application-pdf</icon>
+    <name>Jebleskon - Merge PDFs</name>
+    <unique-id>jebleskon-merge</unique-id>
+    <command>bash -c 'jebleskon --action merge --files "$(echo "%F" | tr " " ",")"'</command>
+    <description>Merge selected PDFs into one</description>
+    <range>2-*</range>
+    <patterns>*.pdf</patterns>
+    <directories/>
+  </action>
+  <action>
+    <icon>image-x-generic</icon>
+    <name>Jebleskon - Images to PDF</name>
+    <unique-id>jebleskon-img2pdf</unique-id>
+    <command>bash -c 'jebleskon --action img2pdf --files "$(echo "%F" | tr " " ",")"'</command>
+    <description>Convert images to PDF</description>
+    <range>*</range>
+    <patterns>*.jpg;*.jpeg;*.png</patterns>
+    <directories/>
+  </action>
+  <action>
+    <icon>application-pdf</icon>
+    <name>Jebleskon - Convert to PDF / DOCX</name>
+    <unique-id>jebleskon-convert</unique-id>
+    <command>jebleskon --action convert-doc --files %f</command>
+    <description>Convert document to PDF or DOCX</description>
+    <range>*</range>
+    <patterns>*.pdf;*.doc;*.docx;*.odt</patterns>
+    <directories/>
+  </action>

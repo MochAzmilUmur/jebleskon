@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Jebleskon: Merge PDFs (Nautilus/Nemo script)
+# Dipanggil via: klik kanan → Scripts → Jebleskon - Merge PDFs
+# $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS berisi path tiap file, satu per baris.
+set -euo pipefail
+
+# Ubah newline-separated paths menjadi comma-separated
+FILES=$(echo "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" | tr '\n' ',' | sed 's/,$//')
+
+if [[ -z "$FILES" ]]; then
+    notify-send "Jebleskon" "Tidak ada file yang dipilih." 2>/dev/null || true
+    exit 1
+fi
+
+jebleskon --action merge --files "$FILES"

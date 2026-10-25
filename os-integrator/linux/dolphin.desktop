@@ -1,0 +1,28 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=application/pdf;image/jpeg;image/png;application/msword;application/vnd.openxmlformats-officedocument.wordprocessingml.document;
+Actions=jebleskonMerge;jebleskonCompress;jebleskonSplit;jebleskonImg2Pdf;jebleskonConvertDoc;
+X-KDE-Priority=TopLevel
+
+# %F di KDE mengembang jadi argumen terpisah (bukan satu string).
+# Wrapper bash -c mengubahnya menjadi daftar koma yang diharapkan --files.
+[Desktop Action jebleskonMerge]
+Name=Jebleskon - Merge PDFs
+Exec=bash -c 'jebleskon --action merge --files "$(printf "%s," "$@" | sed s/,$//)"\ ' -- %F
+
+[Desktop Action jebleskonCompress]
+Name=Jebleskon - Compress PDF
+Exec=bash -c 'jebleskon --action compress --files "$1"' -- %f
+
+[Desktop Action jebleskonSplit]
+Name=Jebleskon - Split PDF into pages
+Exec=bash -c 'jebleskon --action split --files "$1"' -- %f
+
+[Desktop Action jebleskonImg2Pdf]
+Name=Jebleskon - Images to PDF
+Exec=bash -c 'jebleskon --action img2pdf --files "$(printf "%s," "$@" | sed s/,$//)"\ ' -- %F
+
+[Desktop Action jebleskonConvertDoc]
+Name=Jebleskon - Convert to PDF / DOCX
+Exec=bash -c 'jebleskon --action convert-doc --files "$1"' -- %f
