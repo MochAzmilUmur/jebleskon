@@ -58,7 +58,7 @@ Seluruh proses berjalan **secara lokal** — tidak ada berkas yang diunggah ke m
 ### Linux
 
 ```bash
-git clone https://github.com/ming/jebleskon.git
+git clone https://github.com/MochAzmilUmur/jebleskon.git
 cd jebleskon
 chmod +x install.sh
 ./install.sh
@@ -81,7 +81,7 @@ Untuk menghapus instalasi:
 Buka PowerShell sebagai Administrator (klik kanan → **Run as administrator**), lalu jalankan:
 
 ```powershell
-git clone https://github.com/ming/jebleskon.git
+git clone https://github.com/MochAzmilUmur/jebleskon.git
 cd jebleskon
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\install.ps1
@@ -124,7 +124,7 @@ tidak dapat menjalankan skrip installer.
 ### 1. Kloning repositori
 
 ```bash
-git clone https://github.com/ming/jebleskon.git
+git clone https://github.com/MochAzmilUmur/jebleskon.git
 cd jebleskon
 ```
 
@@ -370,7 +370,7 @@ pekerjaan.
 
 ## Lisensi
 
-Hak Cipta (c) 2025 ming
+Hak Cipta (c) 2025 Mochammad Azmil Umur
 
 Dirilis di bawah [Lisensi MIT](LICENSE). Lihat berkas `LICENSE` untuk teks lengkapnya.
 

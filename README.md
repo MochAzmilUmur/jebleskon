@@ -57,7 +57,7 @@ All processing runs **locally** — no files are ever uploaded anywhere.
 ### Linux
 
 ```bash
-git clone https://github.com/ming/jebleskon.git
+git clone https://github.com/MochAzmilUmur/jebleskon.git
 cd jebleskon
 chmod +x install.sh
 ./install.sh
@@ -80,7 +80,7 @@ To uninstall:
 Open PowerShell as Administrator (right-click → **Run as administrator**), then:
 
 ```powershell
-git clone https://github.com/ming/jebleskon.git
+git clone https://github.com/MochAzmilUmur/jebleskon.git
 cd jebleskon
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\install.ps1
@@ -123,7 +123,7 @@ scripts.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/ming/jebleskon.git
+git clone https://github.com/MochAzmilUmur/jebleskon.git
 cd jebleskon
 ```
 
@@ -365,7 +365,7 @@ Please open an issue before starting work on a large change, to avoid duplicated
 
 ## License
 
-Copyright (c) 2025 ming
+Copyright (c) 2025 Mochammad Azmil Umur
 
 Released under the [MIT License](LICENSE). See the `LICENSE` file for the full text.
 

@@ -3,7 +3,9 @@
 #   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 #   .\install.ps1
 
-#Requires -Version 5.1
+param([switch]$Uninstall)
+
+# Requires -Version 5.1
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
@@ -187,7 +189,6 @@ function Uninstall {
 }
 
 # ── Main ──────────────────────────────────────────────────────────────────────
-param([switch]$Uninstall)
 
 Write-Host ""
 Write-Host "╔══════════════════════════════════════╗" -ForegroundColor Cyan
